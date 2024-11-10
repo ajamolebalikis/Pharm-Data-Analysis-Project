@@ -26,64 +26,56 @@ We use a pharmacy sales dataset to:
 The `database_setup.sql` file includes SQL commands to create tables in the SQLite database, including primary keys and foreign keys.
 
 - **Tables Created**:
-  - `Distributors`: Stores distributor details.
-  - `Customers`: Stores customer details, including city and country.
+  - `FactSales`: Fact table for sales data, with foreign keys referencing the dimension tables.
+  - `Customers`: Stores customer and distributors details.
   - `Products`: Stores product details, including price and product class.
-  - `SalesTeams`: Stores sales team information, including sales reps and managers.
-  - `FactSales`: Fact table for sales data, with foreign keys referencing the above dimension tables.
+  - `Location`: Stores the city, country, latitude and longitude details.
+  - `DimDate`: Stores the date, month and year details.
+  - `SalesReps`: Stores sales rep information, including sales reps and managers.
+  - `Channels`: Stores the channel and sub channel details.
+  
+### Data Insertion
+Inserting Data into Each Table
 
-#### Script
+Populating Tables: To populate each dimension table (Distributors, Customers, Products, Locations, DimDates, SalesReps and Channels):
 
-In `database_setup.sql`:
+For each unique customers, inserted customer and distributor in customers table.
 
-```sql
--- Database Setup Script
+Populate the Products table with each unique product name, class, and price combination.
 
--- 1. Create Distributors Table
-CREATE TABLE Distributors (
-    DistributorID INTEGER PRIMARY KEY AUTOINCREMENT,
-    DistributorName TEXT NOT NULL
-);
+Populate the locations table with city, country, latitude and logitude.
 
--- 2. Create Customers Table
-CREATE TABLE Customers (
-    CustomerID INTEGER PRIMARY KEY AUTOINCREMENT,
-    CustomerName TEXT NOT NULL,
-    City TEXT,
-    Country TEXT,
-    Latitude REAL,
-    Longitude REAL
-);
+Populate the Dimdate with year and month.
 
--- 3. Create Products Table
-CREATE TABLE Products (
-    ProductID INTEGER PRIMARY KEY AUTOINCREMENT,
-    ProductName TEXT NOT NULL,
-    ProductClass TEXT,
-    Price REAL
-);
+For each unique sales representative, insert records into SalesTeams with their name, manager, and team.
 
--- 4. Create SalesTeams Table
-CREATE TABLE SalesTeams (
-    SalesTeamID INTEGER PRIMARY KEY AUTOINCREMENT,
-    SalesRepName TEXT,
-    ManagerName TEXT,
-    TeamName TEXT
-);
+Populate the channels table with the channel and subchannel data.
 
--- 5. Create FactSales Table
-CREATE TABLE FactSales (
-    SalesID INTEGER PRIMARY KEY AUTOINCREMENT,
-    DistributorID INTEGER,
-    CustomerID INTEGER,
-    ProductID INTEGER,
-    SalesTeamID INTEGER,
-    Quantity INTEGER,
-    Sales REAL,
-    Month INTEGER,
-    Year INTEGER,
-    FOREIGN KEY (DistributorID) REFERENCES Distributors (DistributorID),
-    FOREIGN KEY (CustomerID) REFERENCES Customers (CustomerID),
-    FOREIGN KEY (ProductID) REFERENCES Products (ProductID),
-    FOREIGN KEY (SalesTeamID) REFERENCES SalesTeams (SalesTeamID)
-);
+Linked Data in FactSales: After filling in the dimension tables, populate FactSales with the transactional data (e.g., quantity, sales, date). For each sale:
+
+Created a foreign key from each dimension table (e.g., DistributorID, CustomerID, ProductID, SalesTeamID) to create a complete record with all relevant data linked by IDs.
+
+### Data Cleaning
+
+Handling Missing Values: Review each table for missing values.
+Correcting Inconsistencies: Eensure city names follow the same format, and convert any inconsistently formatted city and country names to a consistent style.
+
+### ER Diagram
+Once the tables and relationships are set up, created an ER (Entity-Relationship) diagram to visualize the database structure. This diagram shows how tables relate to each other.
+
+<img width="625" alt="Screenshot 2024-11-10 181521" src="https://github.com/user-attachments/assets/1649eca8-e81f-4e72-a852-badd246049af">
+
+### Conclusion
+This database project for pharmacy sales data organizes and optimizes transactional information, creating a structured and efficient database. By separating data into dimension tables (such as Distributors, Customers, Products, Locations, DimDate, SalesReps and Channels) and a central fact table (FactSales), we’ve minimized redundancy and ensured relational integrity across the dataset.
+
+The data cleaning steps were essential to ensuring data quality and reliability, handling missing values and correct inconsistencies. These steps allow for accurate analysis and reporting, contributing to better business insights and operational decisions.
+
+The ER diagram further supports understanding and maintaining this structure, illustrating the relationships between each table for both database management and ease of future development. Overall, this project establishes a strong foundation for data-driven decisions, scalable reporting, and further analysis in the pharmacy sales context.
+
+
+
+
+
+
+
+

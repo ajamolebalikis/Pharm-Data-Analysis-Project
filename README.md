@@ -1,7 +1,7 @@
 # Pharm-Data-Analysis-Project
 
 
-This project involves setting up a relational database in SQLite to analyze pharmacy sales data. The project includes creating tables, handling data cleaning, generating an ER diagram, and inserting data into fact and dimension tables.
+This project setting up a relational database in SQLite to analyze pharmacy sales data. The project includes creating tables, handling data cleaning, generating an ER diagram, and inserting data into fact and dimension tables. This project provides an in-depth analysis of pharmacy sales data using SQLite and Python to derive meaningful insights. The analysis focuses on sales trend, customer behaviour and product performance across locations and time.
 
 ## Contents
 
@@ -10,15 +10,34 @@ This project involves setting up a relational database in SQLite to analyze phar
 3. [Data Cleaning](#data-cleaning)
 4. [Data Insertion](#data-insertion)
 5. [ER Diagram](#er-diagram)
+6. [SQL Analysis](#sql-analysis)
+7. [Python Analysis and Visualization](#python-analysis-and-visualization) 
+8. [Project Results](#project-results)  
+9. [Conclusion](#conclusion)
+
 
 ---
 
 ### Project Overview
 
+The purpose of this project is to analyze sales performance and identify product trends by leveraging SQL for querying and Python for advanced data analysis and visualizations.  
+
 We use a pharmacy sales dataset to:
 - Create a normalized database with dimension and fact tables.
 - Clean data to ensure integrity by handling nulls, and correcting spelling inconsistencies.
 - Generate an ER diagram to visualize relationships.
+- Analyze total sales for each product to identify top-selling products.
+- Understand product trends over time.
+- Analyze sales trends by location.
+- Perform exploratory data analysis and visualize results.
+
+### Tools Used
+SQL: For data extraction and transformation.
+Python (Jupyter Notebook): For analysis, data cleaning, and visualization.
+Pandas: Data manipulation and transformation.
+Matplotlib & Seaborn: Data visualization.
+SQLite: For managing and querying the database.
+
 
 
 ### Database Setup
@@ -64,6 +83,29 @@ Correcting Inconsistencies: Eensure city names follow the same format, and conve
 Once the tables and relationships are set up, created an ER (Entity-Relationship) diagram to visualize the database structure. This diagram shows how tables relate to each other.
 
 <img width="625" alt="Screenshot 2024-11-10 181521" src="https://github.com/user-attachments/assets/1649eca8-e81f-4e72-a852-badd246049af">
+
+### SQL Analysis
+ Sales Performance Analysis
+ For the total sales of each products, Ionclotide comes as the first product with the total sales of 169083391.0 and Tetratanyl comes second.
+SELECT Products.ProductName, SUM(FactSales.Sales) AS TotalSales
+FROM FactSales
+JOIN Products ON FactSales.ProductID = Products.ProductID
+GROUP BY Products.ProductName
+ORDER BY TotalSales DESC;
+
+Monthly Sales Trend
+For the monthly sales trend, December was the highest with the total of sales of 306284161.0, November comes second and April comes last.
+  SELECT DimDate.Month, SUM(Sales) AS MonthlySales
+FROM FactSales
+JOIN DimDate ON FactSales.DateID = DimDate.DateID
+WHERE Year = 2020 -- Replace with specific year
+GROUP BY Month
+ORDER BY MonthlySales DESC;
+
+Sales by Location
+Identified cities with the highest sales which Butzbach comes the highest with the total sales of 93561780.0  
+ 
+ 
 
 ### Conclusion
 This database project for pharmacy sales data organizes and optimizes transactional information, creating a structured and efficient database. By separating data into dimension tables (such as Distributors, Customers, Products, Locations, DimDate, SalesReps and Channels) and a central fact table (FactSales), we’ve minimized redundancy and ensured relational integrity across the dataset.

@@ -86,21 +86,25 @@ Once the tables and relationships are set up, created an ER (Entity-Relationship
 
 ### SQL Analysis
  Sales Performance Analysis
- For the total sales of each products, Ionclotide comes as the first product with the total sales of 169083391.0 and Tetratanyl comes second.
+ WHAT ARE THE TOTAL SALES FOR EACH PRODUCTS??(IDENTIFY THE TOP-SELLING PRODUCTS).
 SELECT Products.ProductName, SUM(FactSales.Sales) AS TotalSales
 FROM FactSales
 JOIN Products ON FactSales.ProductID = Products.ProductID
 GROUP BY Products.ProductName
 ORDER BY TotalSales DESC;
 
+<img width="434" alt="Total sales for each product execution" src="https://github.com/user-attachments/assets/b37b3388-6f5f-4399-8f72-5b4fb633efb2">
+
+The data indicates that Ionclotide accounts for the majority of all sales with the total sales of 169083391.0 and Tetratanyl and Sumanazole respectively which hows the top selling products.
+
 Monthly Sales Trend
-For the monthly sales trend, December was the highest with the total of sales of 306284161.0, November comes second and April comes last.
-  SELECT DimDate.Month, SUM(Sales) AS MonthlySales
-FROM FactSales
-JOIN DimDate ON FactSales.DateID = DimDate.DateID
-WHERE Year = 2020 -- Replace with specific year
-GROUP BY Month
-ORDER BY MonthlySales DESC;
+HOW DO SALES VARY MONTH BY MONTH WITHIN A SPECIFIC YEAR??(ANALYZE MONTHLY SALES TREND)
+<img width="536" alt="Month by month sales" src="https://github.com/user-attachments/assets/338bbbef-4da2-4608-a4e3-7fdffb63313d">
+
+<img width="208" alt="Month by month execution" src="https://github.com/user-attachments/assets/aae8a338-0f7d-4653-bfe6-3ce356bf9b7f">
+
+From month to month sales December had the biggest sales with total of 306284161.0 while April has the lowest sales with the total of 135409908.0 which indicates December records the highest sales 
+
 
 Sales by Location
 Identified cities with the highest sales which Butzbach comes the highest with the total sales of 93561780.0  

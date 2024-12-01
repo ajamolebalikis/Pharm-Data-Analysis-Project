@@ -13,15 +13,16 @@ The objective of the project is to uncover sales trends, identify top-performing
 
 ## Contents
 
-1. [Project Overview](#project-overview)
-2. [Database Setup](#database-setup)
-3. [Data Cleaning](#data-cleaning)
-4. [Data Insertion](#data-insertion)
-5. [ER Diagram](#er-diagram)
-6. [SQL Analysis](#sql-analysis)
-7. [Python Analysis and Visualization](#python-analysis-and-visualization) 
-8. [Project Results](#project-results)  
-9. [Conclusion](#conclusion)
+1. [Problem Statement](#problem statement)
+2. [Project Overview](#project-overview)
+3. [Database Setup](#database-setup)
+4. [Data Cleaning](#data-cleaning)
+5. [Data Insertion](#data-insertion)
+6. [ER Diagram](#er-diagram)
+7. [SQL Analysis](#sql-analysis)
+8. [Python Analysis and Visualization](#python-analysis-and-visualization) 
+9. [Project Results](#project-results)  
+10. [Conclusion](#conclusion)
 
 
 ---

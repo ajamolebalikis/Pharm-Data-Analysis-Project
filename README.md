@@ -13,7 +13,7 @@ The objective of the project is to uncover sales trends, identify top-performing
 
 ## Contents
 
-1. [Problem Statement](#problem statement)
+1. [Problem Statement](#problem-statement)
 2. [Project Overview](#project-overview)
 3. [Database Setup](#database-setup)
 4. [Data Cleaning](#data-cleaning)

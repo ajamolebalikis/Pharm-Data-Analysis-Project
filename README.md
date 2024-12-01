@@ -7,6 +7,8 @@ This project focuses on analyzing sales data using Python and SQLite, integratin
 
 The objective of the project is to uncover sales trends, identify top-performing products and regions, understand customer purchasing patterns, and visualize the geographic impact on sales. This analysis aims to help the business optimize its operations, target its customer base more effectively, and develop data-driven strategies for future growth.
 
+**Disclaimer**: The datasets used in this report is from 3SIGNET LTD Data Archive and are purely for demonstration purposes and do not represent any specific company, institution or country.
+
 
 
 ## Contents

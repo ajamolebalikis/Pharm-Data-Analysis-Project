@@ -27,6 +27,19 @@ The objective of the project is to uncover sales trends, identify top-performing
 
 ---
 
+
+### Problem Statement
+
+Businesses face challenges in understanding sales performance due to fragmented data, lack of geographic insights, and limited visibility into customer behavior and product trends. Key issues include:
+
+1. Identifying year-over-year and seasonal sales trends.
+2. Analyzing product performance across regions and channels.
+3. Understanding customer demographics and channel effectiveness.
+4. Managing and cleaning fragmented datasets for accurate analysis.
+5. Leveraging visual and geospatial insights to make data-driven decisions.
+
+
+   
 ### Project Overview
 
 The purpose of this project is to analyze sales performance and identify product trends by leveraging SQL for querying and Python for advanced data analysis and visualizations.  

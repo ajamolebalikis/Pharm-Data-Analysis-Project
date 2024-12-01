@@ -32,26 +32,30 @@ The objective of the project is to uncover sales trends, identify top-performing
 
 Businesses face challenges in understanding sales performance due to fragmented data, lack of geographic insights, and limited visibility into customer behavior and product trends. Key issues include:
 
-1. Identifying year-over-year and seasonal sales trends.
-2. Analyzing product performance across regions and channels.
-3. Understanding customer demographics and channel effectiveness.
-4. Managing and cleaning fragmented datasets for accurate analysis.
-5. Leveraging visual and geospatial insights to make data-driven decisions.
+ - Identifying year-over-year and seasonal sales trends.
+ - Analyzing product performance across regions and channels.
+ - Understanding customer demographics and channel effectiveness.
+ - Managing and cleaning fragmented datasets for accurate analysis.
+ - Leveraging visual and geospatial insights to make data-driven decisions.
 
 
-   
 ### Project Overview
 
-The purpose of this project is to analyze sales performance and identify product trends by leveraging SQL for querying and Python for advanced data analysis and visualizations.  
+This project focuses on analyzing sales data using Python and SQLite to uncover trends, patterns, and actionable insights that drive business decisions. The dataset includes details on sales transactions, products, customer demographics, geographic locations, and sales channels. By combining database management, advanced analytics, and geospatial visualizations, the project provides a comprehensive understanding of sales performance across time, products, regions, and customer segments.
 
-We use a pharmacy sales dataset to:
-- Create a normalized database with dimension and fact tables.
-- Clean data to ensure integrity by handling nulls, and correcting spelling inconsistencies.
-- Generate an ER diagram to visualize relationships.
-- Analyze total sales for each product to identify top-selling products.
-- Understand product trends over time.
-- Analyze sales trends by location.
-- Perform exploratory data analysis and visualize results.
+The analysis involved:
+
+- Organized data into structured tables for efficient querying and analysis.
+- Merged data from multiple sources, calculated total sales, and cleaned for duplicates and null values.
+- Exploratory Data Analysis (EDA):
+- Conducted detailed investigations to understand data distribution, identify outliers, and assess relationships between variables.
+- Sales Performance Analysis
+- Yearly and Monthly Trends 
+- Products Performance and Trends
+- Geographic Performance
+- Customer Demographics and Channel Analysis
+- Geospatial Analysis with Python using Geopandas and Plotly
+
 
 ### Tools Used
 SQL: For data extraction and transformation.

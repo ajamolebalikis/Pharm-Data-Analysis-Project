@@ -1,7 +1,13 @@
 # Pharm-Data-Analysis-Project
 
 
-This project setting up a relational database in SQLite to analyze pharmacy sales data. The project includes creating tables, handling data cleaning, generating an ER diagram, and inserting data into fact and dimension tables. This project provides an in-depth analysis of pharmacy sales data using SQLite and Python to derive meaningful insights. The analysis focuses on sales trend, customer behaviour and product performance across locations and time.
+## Introduction 
+
+This project focuses on analyzing sales data using Python and SQLite, integrating data analysis techniques and geospatial visualizations to extract valuable business insights. The dataset includes transactional sales data, customer demographics, product details, and geospatial location data, providing a comprehensive view of sales performance and customer behavior. By leveraging SQLite for database management and Python for data analysis, the project covers a wide range of tasks, from data preprocessing to advanced geospatial mapping.
+
+The objective of the project is to uncover sales trends, identify top-performing products and regions, understand customer purchasing patterns, and visualize the geographic impact on sales. This analysis aims to help the business optimize its operations, target its customer base more effectively, and develop data-driven strategies for future growth.
+
+
 
 ## Contents
 
